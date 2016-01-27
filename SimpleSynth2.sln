@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSynth", "SimpleSynth\SimpleSynth.csproj", "{23B7752F-8670-487A-A78A-11705B2E9E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSynthUnitTests", "SimpleSynthUnitTests\SimpleSynthUnitTests.csproj", "{5C4D4D7C-609D-43E7-970F-B446B0E2C097}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioProviderUnitTests", "AudioProviderUnitTests\AudioProviderUnitTests.csproj", "{D5DBB5D3-5B26-4707-8FF5-02D5C26D5A06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{23B7752F-8670-487A-A78A-11705B2E9E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23B7752F-8670-487A-A78A-11705B2E9E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23B7752F-8670-487A-A78A-11705B2E9E94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C4D4D7C-609D-43E7-970F-B446B0E2C097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C4D4D7C-609D-43E7-970F-B446B0E2C097}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C4D4D7C-609D-43E7-970F-B446B0E2C097}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C4D4D7C-609D-43E7-970F-B446B0E2C097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DBB5D3-5B26-4707-8FF5-02D5C26D5A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DBB5D3-5B26-4707-8FF5-02D5C26D5A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DBB5D3-5B26-4707-8FF5-02D5C26D5A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DBB5D3-5B26-4707-8FF5-02D5C26D5A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
