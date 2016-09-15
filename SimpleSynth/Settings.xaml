@@ -1,0 +1,24 @@
+﻿<Window x:Name="SettingsWindow" x:Class="SimpleSynth.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleSynth"
+        mc:Ignorable="d"
+        Title="Settings" Height="317.923" Width="493" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="settingsClose" Content="Ok" Margin="0,0,37.484,16.698" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105" Click="settingsClose_Click" Height="40.96" FontSize="16"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Adjust Desired Latency" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,39.62,0,0" TextWrapping="Wrap" Text="(Warning: A lower latency will increase the chance of popping or skipping during audio playback) " VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Latency:" HorizontalAlignment="Left" Margin="18.796,76.54,0,0" Height="48.627" VerticalAlignment="Top" Width="73.84" FontSize="16"/>
+        <Label x:Name="label1" Content="(ms)" Margin="176.589,76.54,0,0" RenderTransformOrigin="0.5,0.5" FontSize="16" HorizontalAlignment="Left" Height="48.627" VerticalAlignment="Top" Width="61.107"/>
+        <TextBox x:Name="latency" Height="28" Margin="97.636,80.54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73.953" FontSize="16"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,0,0,128.81" TextWrapping="Wrap" Text="Adjust Buffers" FontSize="16" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="10,0,0,103.183" TextWrapping="Wrap" Text="(Buffer size must range from 0 to 8 buffers)" VerticalAlignment="Bottom"/>
+        <Label x:Name="label_Copy" Content="Buffer size:" HorizontalAlignment="Left" Margin="18.796,0,0,54.89" Height="43.293" VerticalAlignment="Bottom" Width="91.84" FontSize="16"/>
+        <TextBox x:Name="bufferSize" Height="28" Margin="115.636,0,0,66.183" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55.953" FontSize="16"/>
+
+
+
+    </Grid>
+</Window>

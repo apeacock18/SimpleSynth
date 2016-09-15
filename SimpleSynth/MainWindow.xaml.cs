@@ -27,10 +27,12 @@ namespace SimpleSynth
             }
         }
 
+        // Play note when right mouse button clicks piano keyboard
         private void Key_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
             {
+                // Set new frequency, then play note
                 double freq = Convert.ToDouble(((Button)sender).Content);
                 audio.SetFrq(freq);
                 audio.Play();
@@ -41,12 +43,14 @@ namespace SimpleSynth
             }
         }
 
+        // Stop audio when mouse button lifts from keyboard
         private void Key_MouseUp(object sender, MouseButtonEventArgs e)
         {
             audio.mixer.env.Gate(false);
             audio.waveOut.Stop();
         }
 
+        // Change frequency to new note if mouse enters different key while pressed
         private void Key_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Mouse.RightButton == MouseButtonState.Pressed)
@@ -61,15 +65,18 @@ namespace SimpleSynth
         {
             try
             {
-                // Set frequency of oscillators
-                double _frequency = Convert.ToDouble(key.Content);
-                audio.SetFrq(_frequency);
-
                 // Play new note if audio is stopped
                 if (audio.IsStopped())
                     audio.waveOut.Play();
 
+                // Set frequency of oscillators
+                double _frequency = Convert.ToDouble(key.Content);
+                audio.SetFrq(_frequency);
+
                 // Increment index to show that a key was pressed
+                // Note: This index sometimes gets unexpectadly incremented, leading to notes
+                // being played after the button is released. The other solution would have been to
+                // check if any other key was pressed.
                 noteIndex++;
             }
             catch (Exception ex)
@@ -206,6 +213,7 @@ namespace SimpleSynth
                 audio.waveOut.Stop();
         }
 
+        // Change the octave modifier on osc1
         private void osc1Range_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (osc1Range.SelectedIndex)
@@ -233,6 +241,7 @@ namespace SimpleSynth
             }
         }
 
+        // Change the octave modifier on osc2
         private void osc2Range_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (osc2Range.SelectedIndex)
@@ -260,6 +269,7 @@ namespace SimpleSynth
             }
         }
 
+        // Change the octave modifier on osc3
         private void osc3Range_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (osc3Range.SelectedIndex)
@@ -287,6 +297,7 @@ namespace SimpleSynth
             }
         }
 
+        // Modify the gain/ volume
         private void osc1Volume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             audio.oscs[0].Gain = Convert.ToDouble(osc1Volume.Value);
@@ -302,6 +313,7 @@ namespace SimpleSynth
             audio.oscs[2].Gain = Convert.ToDouble(osc3Volume.Value);
         }
 
+        // Change the wave type of the oscillator
         private void osc1Wave_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (osc1Wave.SelectedIndex)
@@ -374,11 +386,13 @@ namespace SimpleSynth
             }
         }
 
+        // Adjust the main volume
         private void mainVolume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             audio.waveOut.Volume = (float)(mainVolume.Value);
         }
 
+        // Adjust the fine tuned frequency
         private void osc1Tuning_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             audio.oscs[0].Tuning = 1 + osc1Tuning.Value;
@@ -497,6 +511,7 @@ namespace SimpleSynth
             w.SettingsWindow.Show();
         }
 
+        // Set cutoff value for filter
         private void filterLevel_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             audio.waveOut.Volume = (float)(filterLevel.Value);
