@@ -44,7 +44,7 @@ namespace SynthAudio
         /// Constructor for creating new audioprovider including
         /// mixer, oscillators and envelope
         /// </summary>
-        /// <param name="oscNum"></param>
+        /// <param name="oscNum">Number of oscillators</param>
         public AudioProvider(int oscNum)
         {
             // Fill mixer with oscillators
@@ -78,9 +78,9 @@ namespace SynthAudio
         /// <summary>
         /// Constructor for assigning latency and buffers
         /// </summary>
-        /// <param name="oscNum"></param>
-        /// <param name="buffers"></param>
-        /// <param name="latency"></param>
+        /// <param name="oscNum">Number of oscillators</param>
+        /// <param name="buffers">Number of buffers</param>
+        /// <param name="latency">Desired latency in ms</param>
         public AudioProvider(int oscNum, int buffers, int latency)
         {
             if (oscNum <= 0)
@@ -147,7 +147,7 @@ namespace SynthAudio
         /// <summary>
         /// Shifts phase through left channel
         /// </summary>
-        /// <param name="state"></param>
+        /// <param name="state">0 = off , 1 = on</param>
         public void PhaseLeft(bool state)
         {
             for (int i = 0; i < oscs.Count; i++)
@@ -159,7 +159,7 @@ namespace SynthAudio
         /// <summary>
         /// Shifts phase through right channel
         /// </summary>
-        /// <param name="state"></param>
+        /// <param name="state">0 = off , 1 = on</param>
         public void PhaseRight(bool state)
         {
             for (int i = 0; i < oscs.Count; i++)
@@ -171,7 +171,6 @@ namespace SynthAudio
         /// <summary>
         /// Returns true if waveOut is stopped
         /// </summary>
-        /// <returns></returns>
         public bool IsStopped()
         {
             return (waveOut.PlaybackState == PlaybackState.Stopped);
